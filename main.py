@@ -3,12 +3,13 @@ from datetime import date, timedelta
 from csv import writer
 
 
-def collect_data():
+def collect_data(year_a, month_a, day_a, year_b, month_b, day_b):
 
     csv_data = [['Date', 'Saint', 'Scripture', 'Lives']]
     from datetime import date, timedelta
-    start_date = date(2025, 2, 15)
-    end_date = date(2025, 2, 21)
+    
+    start_date = date(year_a, month_a, day_a)
+    end_date = date(year_b, month_b, day_b)
     delta = timedelta(days=1)
    
     while start_date <= end_date:
@@ -58,7 +59,16 @@ def collect_data():
 
 
 def main():
-    collect_data()
+
+    year_a = 2025
+    month_a = 2
+    day_a = 21
+
+    year_b = 2026
+    month_b = 2
+    day_b = 21
+
+    collect_data(year_a, month_a, day_a, year_b, month_b, day_b)
 
 
 main()
